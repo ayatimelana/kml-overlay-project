@@ -20,6 +20,9 @@ A React application that allows users to upload `.kml` files and visualize them 
 
 ## Screenshots
 
+1. Upload Screen ("C:\Users\ayati\kml-overlay\Screenshots\Upload Screen.jpg")
+2. Map Modal ("C:\Users\ayati\kml-overlay\Screenshots\Map Modal.jpg")
+
 ## How to Run Locally
 
 1. Clone the repository:
