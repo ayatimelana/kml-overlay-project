@@ -18,14 +18,6 @@ A React application that allows users to upload `.kml` files and visualize them 
 
 ---
 
-## Screenshots
-
-1. Upload Screen
-[Upload Screen](Upload Screen.jpg)
-
-2. Map Modal
-[Map Modal](Map Modal.jpg)
-
 ## How to Run Locally
 
 1. Clone the repository:
