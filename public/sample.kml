@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sample KML Polygon</name>
+    <Placemark>
+      <name>Custom Polygon</name>
+      <description>This is a user-uploaded polygon</description>
+      <Style>
+        <LineStyle>
+          <color>ff00d7ff</color> <!-- Chrome Yellow border (#FFD700) in aabbggrr format -->
+          <width>3</width>
+        </LineStyle>
+        <PolyStyle>
+          <fill>0</fill> <!-- No fill -->
+        </PolyStyle>
+      </Style>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              77.0,12.9 77.01,12.9 77.01,12.91 77.0,12.91 77.0,12.9
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+  </Document>
+</kml>
