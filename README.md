@@ -23,7 +23,7 @@ A React application that allows users to upload `.kml` files and visualize them 
 
 1. Clone the repository:
 
-git clone https://https://github.com/ayatimelana/kml-overlay-project.git
+git clone https://github.com/ayatimelana/kml-overlay-project.git
 
 2. Install dependencies:
 
