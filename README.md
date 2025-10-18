@@ -1,32 +1,36 @@
 # kml-overlay-project
 A React app to visualize KML files on Google Maps with polygons, modal view, and auto-zoom.
 
-# KML Overlay Project
+## KML Overlay on Google Map using Leaflet
 
-A React application that allows users to upload `.kml` files and visualize them on Google Maps. The map opens in a full-screen modal, auto-zooms to fit uploaded polygons, and displays polygons with **no fill** and **Chrome Yellow borders (#FFD700)**.
-
----
+This project allows users to upload .kml files and visualize them as overlays on an interactive map.
+Originally built using the Google Maps API, it is now implemented using Leaflet (OpenStreetMap) — which is completely free and lightweight.
 
 ## Features
 
-- Upload `.kml` files through a simple interface
-- Full-screen modal map view
-- Google Maps integration using `@react-google-maps/api`
-- Polygons auto-center and auto-zoom
-- Clean, minimal, responsive design
-- Close modal to return to upload screen
+- Upload and display any .kml file directly on the map
+- Automatically centers and zooms to the uploaded KML area
+- Clean modal layout for viewing the map
+- Close and reopen the map easily
+- No API key or billing required (Leaflet + OpenStreetMap)
+- Responsive design and smooth user experience
 
----
+## Tech Stack
 
-## How to Run Locally
+- React.js (Frontend framework)
+- Leaflet.js (Map rendering)
+- React-Leaflet (React bindings for Leaflet)
+- OpenStreetMap (Tile layer source)
+
+## Installation & Setup
 
 1. Clone the repository:
 
 git clone https://github.com/ayatimelana/kml-overlay-project.git
+cd kml-overlay-project
 
 2. Install dependencies:
 
-cd kml-overlay-project
 npm install
 
 3. Add .env with your Google Maps API key:
@@ -38,4 +42,15 @@ REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyAedaO7tEz2l5vO7TJWzo4oSnrnyS6_CN4
 npm start
 
 5. Open http://localhost:3000 to see the app.
->>>>>>> f71e1635204008156eb21268fabcf35a81a9251d
+
+## Leaflet Version
+
+This project was originally built using Google Maps API, but was migrated to Leaflet due to Google’s billing and key restrictions.
+
+### Benefits of Leaflet:
+
+- 100% free and open-source
+- Works directly with OpenStreetMap tiles
+- Lightweight and faster loading
+- Easy customization of polygon styles (e.g., no fill, yellow border for each uploaded KML file)
+- No API key or billing setup required
