@@ -1,34 +1,48 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import omnivore from "leaflet-omnivore";
 
 function MapModal({ kmlFileUrl }) {
   useEffect(() => {
-    if (!kmlFileUrl) return; // Do nothing if no file
+    if (!kmlFileUrl) return;
 
-    // Initialize map
-    const map = new window.google.maps.Map(document.getElementById("map"), {
-      center: { lat: 12.905, lng: 77.005 }, // temporary center
-      zoom: 5, // temporary zoom
-    });
+    // Clear previous map (if any)
+    const mapContainer = L.DomUtil.get("map");
+    if (mapContainer != null) {
+      mapContainer._leaflet_id = null;
+    }
 
-    // Load KML layer
-    const kmlLayer = new window.google.maps.KmlLayer({
-      url: kmlFileUrl, // URL of uploaded KML
-      map: map,
-      preserveViewport: false, // auto-zoom and center to fit KML
-    });
+    // Create map
+    const map = L.map("map").setView([20.5937, 78.9629], 5); // India center
 
-    // Optional: log status for debugging
-    kmlLayer.addListener("status_changed", () => {
-      console.log("KML Status:", kmlLayer.getStatus());
-    });
+    // Add free OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Define style for KML (yellow border, no fill)
+    const customStyle = {
+      color: "yellow",
+      weight: 2,
+      fillOpacity: 0,
+    };
+
+    // Load KML
+    const kmlLayer = omnivore
+      .kml(kmlFileUrl, null, L.geoJson(null, { style: customStyle }))
+      .on("ready", function () {
+        map.fitBounds(kmlLayer.getBounds());
+      })
+      .addTo(map);
   }, [kmlFileUrl]);
 
   return (
     <div
       id="map"
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
       }}
     ></div>
   );
