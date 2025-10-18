@@ -4,7 +4,7 @@ A React app to visualize KML files on Google Maps with polygons, modal view, and
 ## KML Overlay on Google Map using Leaflet
 
 This project allows users to upload .kml files and visualize them as overlays on an interactive map.
-Originally built using the Google Maps API, it is now implemented using Leaflet (OpenStreetMap) — which is completely free and lightweight.
+Originally built using the Google Maps API, it is now implemented using Leaflet (OpenStreetMap) - which is completely free and lightweight.
 
 ## Features
 
